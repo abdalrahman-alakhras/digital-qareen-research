@@ -16,30 +16,9 @@ Digital Qareen investigates how proposed actions, independently constrained auth
 
 The diagram describes the **target research architecture**, not a deployed system. The policy and enforcement components must be independently protected from the proposing agent under a defined threat model. A valid identity alone does not authorize an external effect.
 
-```mermaid
-flowchart TD
-    H["Human authority<br/>Scoped and revocable intent"] --> P
-    I["Identity and context<br/>Bounded trust inputs"] --> P
-    A["AI agent<br/>Reasoning and action proposal"] --> P
-    subgraph B["Target independent execution boundary"]
-        P["Policy decision<br/>Scope, binding and current authority"]
-        P -->|"Deny or unresolved"| D["Reject or hold<br/>No authorized dispatch"]
-        P -->|"Allow within scope"| E["Infrastructure enforcement<br/>Pre-effect checks"]
-        E -->|"Checks fail"| D
-    end
-    E -->|"Checks satisfied"| X["External service or resource<br/>Provider-dependent effect guarantees"]
-    P -.-> L["Audit and evidence<br/>Record decision and observed outcome"]
-    E -.-> L
-    D -.-> L
-    X -.-> L
-    S["Published DQ-D2-V2 scope<br/>Metadata differential and synthetic evidence<br/>Native T10: NOT_RUN"]
-    classDef target fill:#eaf2ff,stroke:#2459a6,color:#12274a;
-    classDef blocked fill:#fff0f0,stroke:#b43b3b,color:#641d1d;
-    classDef published fill:#fff7e5,stroke:#ab761d,color:#513600;
-    class P,E target;
-    class D blocked;
-    class S published;
-```
+![Digital Qareen conceptual execution governance: independently constrained policy, pre-effect infrastructure checks, and auditable outcomes; separate DQ-D2-V2 synthetic evidence scope.](architecture.svg)
+
+[View the standalone architecture diagram (SVG)](architecture.svg).
 
 The separate DQ-D2-V2 box identifies what has actually been published. It is not an implemented authorization gateway or evidence of a non-bypassable runtime. External acceptance, in-flight revocation and irreversible effects require provider-specific guarantees; unknown outcomes must be represented explicitly.
 
