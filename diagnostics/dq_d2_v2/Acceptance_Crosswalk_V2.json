@@ -1,0 +1,108 @@
+{
+  "candidate_sha256": "139AEE6B2140206FAACE28F2F5B30048F26E3313BD057FAFEE1B4516825024BB",
+  "contracts": {
+    "T01": {
+      "methods": [],
+      "planned_coverage": "STATIC_ONLY",
+      "residual_gap": "V2 checked_hash changed intentionally; wrapper/pins retained, full anchor behavior untested. Existing V2 regressions cover selected guard cases.",
+      "result": null
+    },
+    "T02": {
+      "methods": [
+        "test_each_guard_field_S_A",
+        "test_A_Z_drift",
+        "test_Z_F_drift",
+        "test_initial_S_drift"
+      ],
+      "planned_coverage": "PARTIAL_SYNTHETIC",
+      "residual_gap": "Real Windows and all combinations not established.",
+      "result": null
+    },
+    "T03": {
+      "methods": [
+        "test_short_read",
+        "test_oversize_count",
+        "test_stable_synthetic_observation"
+      ],
+      "planned_coverage": "PARTIAL_SYNTHETIC",
+      "residual_gap": "Bounded synthetic count, not real IPC/memory/storage.",
+      "result": null
+    },
+    "T04": {
+      "methods": [
+        "test_informational_timestamps",
+        "test_informational_attributes"
+      ],
+      "planned_coverage": "PARTIAL_SYNTHETIC",
+      "residual_gap": "Full receipt semantics not tested.",
+      "result": null
+    },
+    "T05": {
+      "methods": [
+        "test_nonregular_path",
+        "test_guarded_reparse_rejection",
+        "test_size_guard",
+        "test_handle_reparse",
+        "test_delete_pending"
+      ],
+      "planned_coverage": "PARTIAL_SYNTHETIC",
+      "residual_gap": "Real ancestor checks and native containment not run; selected cross-field checks covered by admitted R02 only.",
+      "result": null
+    },
+    "T06": {
+      "methods": [
+        "test_initial_type_guard_preserved_on_later_rejection",
+        "test_stable_multilink_is_not_admission"
+      ],
+      "planned_coverage": "PARTIAL_SYNTHETIC",
+      "residual_gap": "Original host rejection mechanism remains unknown.",
+      "result": null
+    },
+    "T07": {
+      "methods": [
+        "test_native_A_error",
+        "test_native_Z_error"
+      ],
+      "planned_coverage": "PARTIAL_SYNTHETIC",
+      "residual_gap": "Injected errors only, not native parser or ABI.",
+      "result": null
+    },
+    "T08": {
+      "methods": [
+        "test_native_identity_drift",
+        "test_native_stream_count_drift"
+      ],
+      "planned_coverage": "PARTIAL_SYNTHETIC",
+      "residual_gap": "Native cross-field mock checks are separate admitted R02 evidence, not actual platform equivalence.",
+      "result": null
+    },
+    "T09": {
+      "methods": [],
+      "planned_coverage": "SPECIFICATION_ONLY",
+      "residual_gap": "Primary and postflight failure preservation in real wrapper untested.",
+      "result": null
+    },
+    "T10": {
+      "methods": [],
+      "planned_coverage": "NATIVE_NOT_RUN",
+      "residual_gap": "Windows ABI and same-handle native enumeration not authorized.",
+      "result": null
+    },
+    "T11": {
+      "methods": [],
+      "planned_coverage": "SPECIFICATION_ONLY",
+      "residual_gap": "Environment, durable one-shot and hard watchdog not implemented/verified.",
+      "result": null
+    },
+    "T12": {
+      "methods": [
+        "test_stable_multilink_is_not_admission"
+      ],
+      "planned_coverage": "PARTIAL_SYNTHETIC_AND_STATIC",
+      "residual_gap": "CLI lock static only; live containment and publisher trust unverified.",
+      "result": null
+    }
+  },
+  "note": "Twenty historical methods preserved, three amended expectations; all results null. Not all twelve contracts are exercised. T01 versioned anchor helper changes require separate review; T10 remains native NOT_RUN.",
+  "status": "NOT_RUN"
+}

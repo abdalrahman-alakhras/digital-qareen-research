@@ -1,0 +1,148 @@
+{
+  "active_clearances": "NONE",
+  "candidate_sha256": "139AEE6B2140206FAACE28F2F5B30048F26E3313BD057FAFEE1B4516825024BB",
+  "execution_authorized": false,
+  "external_controls_status": "UNVERIFIED",
+  "fixture_creation_authorized": false,
+  "fixtures": [
+    {
+      "id": "N01",
+      "kind": "native_fixture",
+      "required_outcome": "BLOCK if layout, calling conventions, information class values or oracle unavailable/mismatched.",
+      "scenario": "ABI_LAYOUT",
+      "setup": "Independent SDK oracle: x64 HandleInfo size 52, offsets attributes=0, created=4, accessed=12, written=20, volume=28, size_high=32, size_low=36, links=40, index_high=44, index_low=48; StandardInfo size 24, allocation=0, eof=8, links=16, delete_pending=20, directory=21; stream header 24 bytes, 8-byte aligned record offsets. Verify actual interpreter and SDK oracle independently before native calls.",
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "N02",
+      "kind": "native_fixture",
+      "required_outcome": "EOF 0; basic/standard/Python size 0, links 1, stream count 1; stable native identity; empty SHA-256 matches independent oracle.",
+      "scenario": "EMPTY_FILE",
+      "setup": "Fixture root to be separately admitted; relative empty.bin, 0 bytes, ordinary single link, default unnamed stream only.",
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "N03",
+      "kind": "native_fixture",
+      "required_outcome": "EOF 7, links 1, stream count 1; compare expected hash from nominal_payload_sha256 and identity to independent oracle.",
+      "scenario": "REGULAR_FILE",
+      "setup": "Relative regular.bin, exact hex 44412D5431300A, 7 bytes, single link, default stream only.",
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "N04",
+      "kind": "native_fixture",
+      "required_outcome": "Same descriptor; no ownership transfer or extra open; cleanup confirmed. Share-mode enforcement is separate and remains unverified.",
+      "scenario": "SAME_HANDLE",
+      "setup": "Reuse regular.bin on one borrowed descriptor. Observe two native snapshots and a bounded read with descriptor identity and open/close counters; independently inspect share-mode policy; no concurrent mutation test authorized.",
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "N05",
+      "kind": "native_fixture",
+      "required_outcome": "Both names resolve to same native file ID, links 2 at each checkpoint, initial single-link guard false; no executable admission.",
+      "scenario": "MULTILINK",
+      "setup": "Relative multi.bin and multi-alias.bin preprovisioned as two hard links to one 7-byte payload; no other links.",
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "N06",
+      "kind": "native_fixture",
+      "required_outcome": "Logical EOF 7, links 1, stream count 2; hash only unnamed payload if otherwise permitted; no names or ADS bytes in receipt; no admission.",
+      "scenario": "NAMED_STREAM",
+      "setup": "Relative streams.bin with nominal 7-byte unnamed payload plus separately preprovisioned named stream with one harmless byte (hex 58). Fixture setup manifest records expected count 2; no candidate enumeration of names or content.",
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "N07",
+      "kind": "fixture_guard",
+      "required_outcome": "Reject before content read, no traversal through link by candidate; observer confirms no out-of-scope access.",
+      "scenario": "REPARSE_BOUNDARY",
+      "setup": "Separate guard-only fixture relative link.bin points to regular.bin within root; reparse tag and target established by independent setup evidence; no target content read.",
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "N08",
+      "kind": "fixture_guard",
+      "required_outcome": "Reject before read; no cap widening; logical size not allocation size.",
+      "scenario": "SIZE_CAP",
+      "setup": "Separate guard-only fixture oversized.bin logical EOF 67108865; sparse provision if supported, no materialization or reading in this preparation.",
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "N09",
+      "kind": "injected_control",
+      "required_outcome": "A: zero reads and NATIVE_METADATA_INCOMPLETE; Z: no observed hash; primary legacy rejection may take precedence if injected simultaneously (not required here).",
+      "scenario": "API_ERROR",
+      "setup": "Injected basic, standard, stream-query errors individually at A and Z; no live invalid-handle calls.",
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "N10",
+      "kind": "injected_control",
+      "required_outcome": "Reject malformed framing without buffer growth/retry; never infer native parser coverage from mock error strings.",
+      "scenario": "MALFORMED_STREAM",
+      "setup": "Inject raw stream-record buffers: zero/odd name length, negative size/allocation, invalid next offset, misalignment, out-of-bounds header. Requires separately approved parser seam; native_snapshot unchanged.",
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "N11",
+      "kind": "injected_control",
+      "required_outcome": "A: zero reads, UNSAFE_HANDLE_INPUT or NATIVE_METADATA_INCOMPLETE; Z: reject without observed hash. Existing R02 covers selected A cases only.",
+      "scenario": "CROSS_FIELD",
+      "setup": "Inject stable but inconsistent basic/standard/Python logical EOF or link counts and missing required keys, at A and Z independently.",
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "N12",
+      "kind": "injected_control",
+      "required_outcome": "S/A: no byte read; Z: no observed hash (legacy FILE_CHANGED may take precedence). Native sharing and TOCTOU still unverified.",
+      "scenario": "IDENTITY_DRIFT",
+      "setup": "Inject ordinary S/A guard-field mismatch, and separately unsafe Z metadata; no real race or file mutation.",
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "N13",
+      "kind": "admission_control",
+      "required_outcome": "BLOCK before target query; no fallback; requires independent volume/profile proof.",
+      "scenario": "UNSUPPORTED_VOLUME",
+      "setup": "Admission-only: unverified volume type or interpreter/architecture mismatch; no candidate target open.",
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "N14",
+      "kind": "admission_control",
+      "required_outcome": "No operational PASS; confirmed violation/denial sticky FAIL, otherwise INCONCLUSIVE; no retry.",
+      "scenario": "FORENSIC_FAILURE",
+      "setup": "Admission-only: observer/writer loss, missing cleanup ACK, unverified deadline or confirmed boundary violation.",
+      "state": "NOT_RUN"
+    }
+  ],
+  "future_profile": "PROPOSED_X64_LOCAL_NTFS_PYTHON_3_14_0",
+  "gate": "G4-A16-P3-I1-B2-D2-T10-AND-SUITE-V2-PREP",
+  "historical_entry_count": 456,
+  "historical_manifest_status": "NOT_AVAILABLE_IN_REVIEWED_ARTIFACTS",
+  "historical_perimeter_sha256": "2677AF0D82C5EF6BD1DA207946AAAF0F8D310FDD03D01DFEEB9094759BA4F0A3",
+  "hold": {
+    "git_invocation": false,
+    "live_repository_read": false,
+    "migration_quarantines": [
+      27,
+      29,
+      30
+    ],
+    "native_api_call": false,
+    "windows_dispatch": false,
+    "worker_provider_dispatch": false
+  },
+  "limits": {
+    "future_max_attempts_per_separate_grant": 1,
+    "proposed_total_deadline_seconds": 15,
+    "read_bytes": 67108864,
+    "read_sentinel_bytes": 1,
+    "retry_authorized": false,
+    "stream_buffer_bytes": 65536
+  },
+  "nominal_payload_hex": "44412D5431300A",
+  "nominal_payload_sha256": "165195BDCE70BD340A31E30AA2F67A3AB87AAB40D7D0DABF9E600FD4D497DF35"
+}

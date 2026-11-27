@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "active_clearances": {
+      "const": "NONE"
+    },
+    "candidate_sha256": {
+      "const": "139AEE6B2140206FAACE28F2F5B30048F26E3313BD057FAFEE1B4516825024BB"
+    },
+    "execution_authorized": {
+      "const": false
+    },
+    "external_controls_status": {
+      "const": "UNVERIFIED"
+    },
+    "fixture_creation_authorized": {
+      "const": false
+    },
+    "fixtures": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "pattern": "^N(0[1-9]|1[0-4])$",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "native_fixture",
+              "fixture_guard",
+              "injected_control",
+              "admission_control"
+            ]
+          },
+          "required_outcome": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "scenario": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "setup": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "state": {
+            "const": "NOT_RUN"
+          }
+        },
+        "required": [
+          "id",
+          "scenario",
+          "kind",
+          "setup",
+          "required_outcome",
+          "state"
+        ],
+        "type": "object"
+      },
+      "maxItems": 14,
+      "minItems": 14,
+      "type": "array"
+    },
+    "future_profile": {
+      "const": "PROPOSED_X64_LOCAL_NTFS_PYTHON_3_14_0"
+    },
+    "gate": {
+      "const": "G4-A16-P3-I1-B2-D2-T10-AND-SUITE-V2-PREP"
+    },
+    "historical_entry_count": {
+      "const": 456
+    },
+    "historical_manifest_status": {
+      "const": "NOT_AVAILABLE_IN_REVIEWED_ARTIFACTS"
+    },
+    "historical_perimeter_sha256": {
+      "const": "2677AF0D82C5EF6BD1DA207946AAAF0F8D310FDD03D01DFEEB9094759BA4F0A3"
+    },
+    "hold": {
+      "const": {
+        "git_invocation": false,
+        "live_repository_read": false,
+        "migration_quarantines": [
+          27,
+          29,
+          30
+        ],
+        "native_api_call": false,
+        "windows_dispatch": false,
+        "worker_provider_dispatch": false
+      }
+    },
+    "limits": {
+      "const": {
+        "future_max_attempts_per_separate_grant": 1,
+        "proposed_total_deadline_seconds": 15,
+        "read_bytes": 67108864,
+        "read_sentinel_bytes": 1,
+        "retry_authorized": false,
+        "stream_buffer_bytes": 65536
+      }
+    },
+    "nominal_payload_hex": {
+      "const": "44412D5431300A"
+    },
+    "nominal_payload_sha256": {
+      "const": "165195BDCE70BD340A31E30AA2F67A3AB87AAB40D7D0DABF9E600FD4D497DF35"
+    }
+  },
+  "required": [
+    "gate",
+    "execution_authorized",
+    "fixture_creation_authorized",
+    "active_clearances",
+    "candidate_sha256",
+    "historical_perimeter_sha256",
+    "historical_manifest_status",
+    "historical_entry_count",
+    "future_profile",
+    "fixtures",
+    "nominal_payload_hex",
+    "nominal_payload_sha256",
+    "limits",
+    "hold",
+    "external_controls_status"
+  ],
+  "title": "D2 T10 Candidate V2 review-only fixture plan",
+  "type": "object"
+}

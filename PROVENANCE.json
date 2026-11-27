@@ -1,0 +1,81 @@
+{
+  "status": "PREPARED_FOR_PRIVATE_REPOSITORY_REVIEW",
+  "source_archive_sha256": "B91F280A0494564DED9F897043795871122769CF29AECAAC778FA5B6157F85D3",
+  "canonical_commit_reported_in_owner_receipt": "4711472f2653ca719ab6b15602faf87806a52c4a",
+  "canonical_root_tree_reported_in_owner_receipt": "0fd05a70af9e91649c5f0d39c9c253cc7dbe44b8",
+  "canonical_repository_accessed": false,
+  "public_repository_created": false,
+  "scope": "Nine original archive members copied without modification; raw SHA-256 and Git blob SHA-1 matched to the owner-reported canonical commit receipt. The canonical repository was not accessed directly during packaging. This is provenance documentation, not a cryptographic signature or independent certification.",
+  "file_count": 9,
+  "total_bytes": 57602,
+  "files": [
+    {
+      "path": "diagnostics/dq_d2_v2/DQ_I1B2_D2_Metadata_Differential_V2.py",
+      "canonical_path": "diagnostics/dq_d2_v2/DQ_I1B2_D2_Metadata_Differential_V2.py",
+      "bytes": 13859,
+      "sha256": "139AEE6B2140206FAACE28F2F5B30048F26E3313BD057FAFEE1B4516825024BB",
+      "git_blob_sha1": "b8c1384c788d049c3939f553f07e46af62d5493c"
+    },
+    {
+      "path": "diagnostics/dq_d2_v2/Synthetic_Acceptance_Harness_V2.py",
+      "canonical_path": "diagnostics/dq_d2_v2/Synthetic_Acceptance_Harness_V2.py",
+      "bytes": 12120,
+      "sha256": "DB292473F366ED115BE554F97B991CCAA0DC70B2021DC2C864070D554B198427",
+      "git_blob_sha1": "7b21f179b1fb099a3782d315b2ce27c6438c4a76"
+    },
+    {
+      "path": "diagnostics/dq_d2_v2/test_candidate_v2_regressions.py",
+      "canonical_path": "diagnostics/dq_d2_v2/test_candidate_v2_regressions.py",
+      "bytes": 8768,
+      "sha256": "B7873FE5E594EC6EC22F0AD4B31F16906ADE5AEFEEA0AA623EBA72889A7BD72F",
+      "git_blob_sha1": "553f83fe2da39934c450bdfbf31045445f08185e"
+    },
+    {
+      "path": "diagnostics/dq_d2_v2/T10_Fixture_Plan_V2.json",
+      "canonical_path": "diagnostics/dq_d2_v2/T10_Fixture_Plan_V2.json",
+      "bytes": 7496,
+      "sha256": "542CD6C71F87FCCDAA75B06C73A07A95EEC8336FD3894B432806D99DC5AA2620",
+      "git_blob_sha1": "ce9c16debe45ac960e1f08d30afc2b331aee9648"
+    },
+    {
+      "path": "diagnostics/dq_d2_v2/T10_Fixture_Plan_V2.schema.json",
+      "canonical_path": "diagnostics/dq_d2_v2/T10_Fixture_Plan_V2.schema.json",
+      "bytes": 3221,
+      "sha256": "075349815C1F1FE24E818CB69D22D74D1B358910104768366ECD5F5DC8F60D87",
+      "git_blob_sha1": "14b88678ca558b444a70d98164bec9f170fe38c1"
+    },
+    {
+      "path": "diagnostics/dq_d2_v2/Acceptance_Crosswalk_V2.json",
+      "canonical_path": "diagnostics/dq_d2_v2/Acceptance_Crosswalk_V2.json",
+      "bytes": 3670,
+      "sha256": "D8F982F492F4A4DB70564776B5084C5C129CE490B0DA4A256B3FD73DC96A0859",
+      "git_blob_sha1": "6a6418d6b25ab4d1e6ecaacaf7405318ca399642"
+    },
+    {
+      "path": "diagnostics/dq_d2_v2/Verification_Receipt.json",
+      "canonical_path": "diagnostics/dq_d2_v2/Verification_Receipt.json",
+      "bytes": 2607,
+      "sha256": "B792F39CCD9DB36293C7F32EB793C55EDEC96DFE14EB075DA98445603E8DCB47",
+      "git_blob_sha1": "3c4922c02c6ce18063bc01bc67663c6271c72fbc"
+    },
+    {
+      "path": "diagnostics/dq_d2_v2/Regression_Verification_Receipt.json",
+      "canonical_path": "diagnostics/dq_d2_v2/Regression_Verification_Receipt.json",
+      "bytes": 2590,
+      "sha256": "61C9D59870B451F6DB10E3A00A41DD6F4B84106E60721D66A66CCA447354980C",
+      "git_blob_sha1": "c6b6edfb1d96071494071a7ed3029d9ce8793917"
+    },
+    {
+      "path": "diagnostics/dq_d2_v2/README.md",
+      "canonical_path": "diagnostics/dq_d2_v2/README.md",
+      "bytes": 3271,
+      "sha256": "DBACFD026A2039197CDD477EA0F5B8C1AACE977E01CE90AD9BF98758F9C90162",
+      "git_blob_sha1": "1205b14078a445c6b2c76d7050241a6dc974be6a"
+    }
+  ],
+  "release_history": "Standalone research repository; canonical commit and its parents are not included. The release repository commit will have a different OID.",
+  "verification_receipts": "Original point-in-time records retained without rewriting status or identifiers. Referenced external evidence and the original controlled runner are not included.",
+  "public_clearance": false,
+  "native_T10": "NOT_RUN",
+  "operational_certification": "NOT_ESTABLISHED"
+}
