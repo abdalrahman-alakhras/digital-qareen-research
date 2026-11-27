@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you reference this research artifact collection, please cite the fixed release below."
+title: "Digital Qareen Research: DQ-D2-V2 Metadata Differential"
+type: software
+authors:
+  - family-names: Alakhras
+    given-names: Abdalrahman
+version: "0.1.0-research"
+date-released: "2026-11-27"
+commit: "0867c28a807a96b8e65a2900903dc213cfb91e2a"
+repository-code: "https://github.com/abdalrahman-alakhras/digital-qareen-research"
+url: "https://github.com/abdalrahman-alakhras/digital-qareen-research/releases/tag/v0.1.0-research"
+abstract: "Scoped metadata-integrity research artifacts for independent execution governance. The release contains recorded synthetic verification evidence, not the complete Digital Qareen framework or operational certification. Native Windows T10 remains unexecuted."
+keywords:
+  - AI execution governance
+  - independent authorization
+  - metadata integrity
+  - human sovereignty
+  - synthetic verification
